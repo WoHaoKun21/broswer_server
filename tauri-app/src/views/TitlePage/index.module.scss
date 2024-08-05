@@ -1,0 +1,194 @@
+.container {
+  height: 100%;
+  // 收益中心
+  .income {
+    // height: 220px;
+    .info,
+    .infoDate {
+      height: 100px;
+      border-radius: 2%;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 35px;
+        padding: 0px 10px;
+        .time {
+          display: flex;
+          p {
+            margin: 0px 5px;
+            padding: 0px 5px;
+            border-radius: 6px;
+            cursor: pointer;
+          }
+          p.active {
+            background-color: #7ed8fe;
+          }
+        }
+      }
+      .content,
+      .dataContent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 20px;
+        padding: 0px 20px;
+        height: calc(100% - 40px);
+        background-color: #f0f0f0;
+        .item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: calc(100% / 4);
+          p {
+            color: #a8a8a8;
+          }
+          span {
+            color: #000;
+            font-weight: bold;
+          }
+        }
+      }
+      .content {
+        .item:nth-of-type(2) {
+          span {
+            color: #2bd1fc;
+          }
+        }
+        .item:last-of-type {
+          width: 100px;
+          height: 30px;
+          line-height: 30px;
+          font-size: 16px;
+          border-radius: 10px;
+          color: #fff;
+          cursor: pointer;
+          background-color: #7ed8fe;
+        }
+      }
+      .dataContent {
+        .item {
+          width: calc(100% / 7);
+          padding: 0px 10px;
+        }
+      }
+    }
+
+    .author {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+      //   background-color: #f00;
+      .authorLeft {
+        p {
+          font-weight: 400;
+        }
+        div {
+          color: #9e9e9e;
+          span {
+            display: inline-flex;
+            align-items: flex-end;
+            font-weight: bold;
+            color: #3cb0ff;
+            cursor: pointer;
+          }
+        }
+      }
+      .authorRight {
+        width: 100px;
+        height: 35px;
+        text-align: center;
+        line-height: 34px;
+        font-size: 16px;
+        border-radius: 10px;
+        cursor: pointer;
+        border: 1px solid #cfcfcf;
+      }
+    }
+  }
+
+  // 创作中心
+  .create {
+    display: flex;
+    justify-content: flex-end;
+    .btn {
+      margin-right: 10px;
+      width: 100px;
+      height: 30px;
+      font-size: 16px;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 10px;
+      color: #fff;
+      cursor: pointer;
+      background-color: #7ed8fe;
+    }
+  }
+
+  // 我的声音
+  .sound {
+    padding: 10px;
+    // height: 300px;
+    border-radius: 10px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    .row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      .rowItem {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        margin-right: 150px;
+        cursor: pointer;
+        .imgBox {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .itemText {
+          position: absolute;
+          left: 50px;
+          top: 0;
+          z-index: -20;
+          height: 50px;
+          width: 0px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          background-color: #ccc;
+          overflow: hidden;
+          p {
+            margin-right: 5px;
+            margin-top: 5px;
+          }
+          p:first-child {
+            font-size: 20px;
+            font-weight: 550;
+            margin-top: 0;
+            margin-right: 25px;
+          }
+        }
+      }
+      .rowItem:hover .itemText {
+        transition: all 0.3s ease-in;
+        width: 130px;
+        z-index: 999;
+      }
+    }
+    .row:last-of-type {
+      margin-bottom: 0px;
+    }
+  }
+}

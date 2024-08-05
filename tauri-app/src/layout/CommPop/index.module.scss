@@ -1,0 +1,175 @@
+// 头像弹框样式
+.popContainer {
+  width: 368px;
+  height: 200px;
+  overflow-y: auto;
+  // 超级会员
+  .popTop {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    border-bottom: 1px solid #f4f4f4;
+    .popLeftImg {
+      width: 85px;
+      height: 85px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .popRightBox {
+      flex: 1;
+      height: 100%;
+      margin-left: 15px;
+      .payItem {
+        padding: 2px 10px;
+        height: 25px;
+        border-radius: 5px;
+        border: 1px solid #c2c2c2;
+        cursor: pointer;
+      }
+      :global {
+        .ant-tabs {
+          height: 90px;
+          .ant-tabs-nav-wrap {
+            justify-content: center;
+          }
+          .ant-tabs-content-holder {
+            height: calc(100% - 22px);
+            .ant-tabs-content {
+              height: 100%;
+              .ant-tabs-tabpane {
+                height: 100%;
+              }
+              .ant-tabs-tabpane-active {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+              }
+            }
+          }
+        }
+        :where(.css-dev-only-do-not-override-1r287do).ant-tabs .ant-tabs-tab {
+          padding: 0px;
+        }
+        :where(.css-dev-only-do-not-override-1r287do).ant-tabs-top
+          > .ant-tabs-nav::before {
+          border-bottom: none;
+        }
+        :where(.css-dev-only-do-not-override-1r287do).ant-tabs-top
+          > .ant-tabs-nav {
+          margin: 0 0 10px 0;
+        }
+        :where(.css-dev-only-do-not-override-1r287do).ant-tabs
+          .ant-tabs-tab.ant-tabs-tab-active
+          .ant-tabs-tab-btn {
+          color: #000;
+        }
+        :where(.css-dev-only-do-not-override-1r287do).ant-tabs .ant-tabs-tab {
+          color: #bbb;
+        }
+        :where(.css-dev-only-do-not-override-1r287do).ant-tabs
+          .ant-tabs-ink-bar {
+          background: #9c9c9c;
+        }
+      }
+    }
+  }
+  // 评分及评论
+  .popBottom {
+    height: 100px;
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 24px;
+      user-select: none;
+      p {
+        font-weight: bold;
+      }
+      span {
+        color: #09f;
+        cursor: pointer;
+      }
+    }
+    .content {
+      display: flex;
+      height: calc(100% - 24px);
+      .score {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100px;
+        p {
+          font-size: 32px;
+          font-weight: bold;
+        }
+        span {
+          font-size: 12px;
+          color: #c2c2c2;
+        }
+      }
+      .starBox {
+        flex: 1;
+        .starItem {
+          height: 13px;
+          display: flex;
+          align-items: center;
+          :global {
+            :where(.css-dev-only-do-not-override-1r287do).ant-rate {
+              display: flex;
+              flex-direction: row-reverse;
+            }
+            :where(.css-dev-only-do-not-override-1r287do).ant-rate
+              .ant-rate-star:not(:last-child) {
+              margin-inline-end: none;
+            }
+            :where(.css-dev-only-do-not-override-1r287do).ant-rate {
+              color: #828282;
+            }
+            .ant-rate-star {
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+  // 撰写评论
+  .popComment {
+    .title {
+      color: #09f;
+      cursor: pointer;
+    }
+    .commentBox {
+      .commentItem {
+        padding: 5px 10px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        .evalua,
+        .score {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+      .commentItem:last-of-type {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  :global {
+    :where(.css-dev-only-do-not-override-1r287do).ant-rate {
+      color: #828282;
+    }
+  }
+}
+
+// 头像弹框组件样式
+:global {
+  .ant-popover {
+    border: 1px solid #cfcfcf;
+    border-radius: 10px;
+  }
+}

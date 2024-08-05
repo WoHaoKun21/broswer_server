@@ -1,0 +1,25 @@
+.mainHeader {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 40px;
+  border-bottom: 1px solid #eee;
+  padding-right: 10px;
+  .titlebarButton {
+    width: 30px;
+    height: 30px;
+    color: #000;
+    margin-left: 15px;
+    text-align: center;
+    line-height: 30px;
+    &:hover {
+      background-color: #eee;
+    }
+  }
+  .titlebarButton:last-child {
+    &:hover {
+      color: white;
+      background-color: rgb(235, 32, 19);
+    }
+  }
+}
