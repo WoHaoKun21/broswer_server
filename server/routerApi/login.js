@@ -1,6 +1,6 @@
 const express = require("express");
 const { jwtSign } = require("../JWT");
-const { getExcelData, updateExcelData } = require("./index");
+const { getExcelData } = require("./index");
 const router = express.Router();
 
 let userId = null;

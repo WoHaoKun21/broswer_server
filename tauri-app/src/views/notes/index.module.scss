@@ -11,63 +11,69 @@
   //列表
   .content {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     padding: 10px;
-    .row {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 20px;
-      .rowItem {
-        position: relative;
-        width: 50px;
-        height: 50px;
-        margin-right: 150px;
-        cursor: pointer;
-        .imgBox {
+    min-height: 410px;
+
+    .rowItem {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      margin-right: 220px;
+      margin-top: 20px;
+      cursor: pointer;
+      .imgBox {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
           width: 100%;
           height: 100%;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-        .itemText {
-          position: absolute;
-          left: 50px;
-          top: 0px;
-          z-index: -20;
-          height: 50px;
-          width: 0px;
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-          background-color: #ccc;
-          overflow: hidden;
-          p {
-            margin-right: 12px;
-            margin-top: 5px;
-          }
-          p:first-child {
-            font-size: 20px;
-            font-weight: 550;
-            margin-top: 0;
-          }
         }
       }
-      .rowItem:hover .itemText {
-        transition: all 0.3s ease-in;
-        width: 150px;
-        z-index: 999;
+      .itemText {
+        position: absolute;
+        left: 50px;
+        top: 0px;
+        z-index: -20;
+        height: 50px;
+        width: 0px;
+        padding: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #ccc;
+        overflow: hidden;
+        p {
+          width: 60px;
+          font-size: 20px;
+          font-weight: 550;
+          margin-top: 0;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
       }
     }
-    .row:last-of-type {
-      margin-bottom: 0px;
+    .rowItem:hover .itemText {
+      transition: all 0.3s ease-in;
+      width: 150px;
+      z-index: 999;
+      padding: 0px 10px 0px 5px;
+    }
+    .rowItem:nth-of-type(3n) {
+      margin-right: 50px;
+    }
+    .rowItem:nth-of-type(1),
+    .rowItem:nth-of-type(2),
+    .rowItem:nth-of-type(3) {
+      margin-top: 0px;
     }
   }
+
   :global {
     // 组件自带类名样式
     .ant-tabs-top > .ant-tabs-nav {

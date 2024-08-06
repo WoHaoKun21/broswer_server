@@ -10,8 +10,8 @@ export default defineConfig(async () => ({
     strictPort: true,
     proxy: {
       "/api": {
-        // target: "http://192.168.2.19:8080/api",
-        target: "http://192.168.0.118:8080/api",
+        target: "http://192.168.2.19:8080/api",
+        // target: "http://192.168.0.118:8080/api",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
