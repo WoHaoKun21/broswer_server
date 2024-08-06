@@ -49,27 +49,22 @@
             }
           }
         }
-        :where(.css-dev-only-do-not-override-1r287do).ant-tabs .ant-tabs-tab {
+        .ant-tabs .ant-tabs-tab {
           padding: 0px;
         }
-        :where(.css-dev-only-do-not-override-1r287do).ant-tabs-top
-          > .ant-tabs-nav::before {
+        .ant-tabs-top > .ant-tabs-nav::before {
           border-bottom: none;
         }
-        :where(.css-dev-only-do-not-override-1r287do).ant-tabs-top
-          > .ant-tabs-nav {
+        .ant-tabs-top > .ant-tabs-nav {
           margin: 0 0 10px 0;
         }
-        :where(.css-dev-only-do-not-override-1r287do).ant-tabs
-          .ant-tabs-tab.ant-tabs-tab-active
-          .ant-tabs-tab-btn {
+        .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
           color: #000;
         }
-        :where(.css-dev-only-do-not-override-1r287do).ant-tabs .ant-tabs-tab {
+        .ant-tabs .ant-tabs-tab {
           color: #bbb;
         }
-        :where(.css-dev-only-do-not-override-1r287do).ant-tabs
-          .ant-tabs-ink-bar {
+        .ant-tabs .ant-tabs-ink-bar {
           background: #9c9c9c;
         }
       }
@@ -116,15 +111,14 @@
           display: flex;
           align-items: center;
           :global {
-            :where(.css-dev-only-do-not-override-1r287do).ant-rate {
+            .ant-rate {
               display: flex;
               flex-direction: row-reverse;
             }
-            :where(.css-dev-only-do-not-override-1r287do).ant-rate
-              .ant-rate-star:not(:last-child) {
+            .ant-rate .ant-rate-star:not(:last-child) {
               margin-inline-end: none;
             }
-            :where(.css-dev-only-do-not-override-1r287do).ant-rate {
+            .ant-rate {
               color: #828282;
             }
             .ant-rate-star {
@@ -160,7 +154,7 @@
     }
   }
   :global {
-    :where(.css-dev-only-do-not-override-1r287do).ant-rate {
+    .ant-rate {
       color: #828282;
     }
   }

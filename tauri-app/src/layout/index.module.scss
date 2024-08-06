@@ -125,7 +125,7 @@
           transform: translateX(-50%);
           transition: all 0.3s ease;
           :global {
-            :where(.css-dev-only-do-not-override-1r287do).ant-slider {
+            .ant-slider {
               margin: 0px;
             }
           }

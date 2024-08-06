@@ -12,6 +12,7 @@
   .content {
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
     padding: 10px;
     min-height: 410px;
     .rowItem {

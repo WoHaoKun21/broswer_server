@@ -7,7 +7,7 @@ let userId = null;
 
 // 用户登录
 router.post("/login", (request, response) => {
-  const userList = getExcelData("database/dataBase.xls", 0);
+  const userList = getExcelData("database/dataBase.xlsx", 0);
   const user = userList.find((item) => item.username === request.body.username);
   if (user) {
     userId = user.userId;
@@ -28,7 +28,7 @@ router.post("/login", (request, response) => {
 
 // 查询用户信息
 router.get("/userInfo", (request, response) => {
-  const userList = getExcelData("database/dataBase.xls", 0);
+  const userList = getExcelData("database/dataBase.xlsx", 0);
   const userInfo = userList.find((item) => item.userId === userId);
   response.send({
     code: 200,

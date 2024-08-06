@@ -1,6 +1,5 @@
 const express = require("express");
 const IP = require("ip");
-const path = require("path");
 const bodyParser = require("body-parser");
 const login = require("./routerApi/login"); // 登录页面接口
 const music = require("./routerApi/music"); // 音乐接口
@@ -23,6 +22,4 @@ app.use("/api", music);
 // 启动服务器并进行监听
 app.listen("8080", IP.address()); // 端口号——随意，不冲突就好
 
-console.log("接口运行地址：", IP.address() + ":8080");
-
-console.log("文件的相对路径:", process.cwd());
+console.log("接口运行地址：", "http://" + IP.address() + ":8080");
