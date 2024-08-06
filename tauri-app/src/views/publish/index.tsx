@@ -16,42 +16,6 @@ const { TabPane } = Tabs;
 const Publish = () => {
   const [select, setSelect] = useState("all");
   const [musicList, setMusicList] = useState<any[]>([]);
-  const ContentItem = () => (
-    <div className={styles.rowItem}>
-      {/* 这里是内容，例如文本、图标等 */}
-      <div className={styles.imgBox}>
-        <img src="https://p.qqan.com/up/2021-7/16272658313934827.png" alt="" />
-      </div>
-      <div className={styles.itemText}>
-        <p>test</p>
-        <p>
-          <StartType style={{ color: "#000", fontSize: 20 }} />
-        </p>
-        <p>
-          <HeartFilled
-            style={{ fontSize: 20 }}
-            // onClick={() => handleLike(o.musicId, false)}
-          />
-          {/* <HeartOutlined
-            style={{ fontSize: 20 }}
-            // onClick={() => handleLike(o.musicId, true)}
-          /> */}
-        </p>
-        <p>20</p>
-      </div>
-    </div>
-  );
-
-  const ContentRow = () => (
-    <div className={styles.row}>
-      <ContentItem />
-      <ContentItem />
-      <ContentItem />
-    </div>
-  );
-  const rows = Array.from({ length: 15 }, (_, index) => (
-    <ContentRow key={index} />
-  ));
 
   const queryData = async () => {
     const res = await getMusicList();
