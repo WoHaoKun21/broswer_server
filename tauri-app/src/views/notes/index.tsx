@@ -1,13 +1,7 @@
 import { useEffect, useState } from "react";
 import { Spin, Tabs } from "antd";
 import { HeartFilled, HeartOutlined } from "@ant-design/icons";
-import {
-  LikeLineType,
-  LocalType,
-  MoneyType,
-  MyLikeType,
-  StartType,
-} from "@/component/Icons";
+import { LocalType, MoneyType, MyLikeType, StartType } from "@/component/Icons";
 import imgInfo from "@/component/active";
 import { getMusicList } from "@/services/notes";
 import styles from "./index.module.scss";

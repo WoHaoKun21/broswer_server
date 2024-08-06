@@ -1,18 +1,21 @@
-import { useState } from "react";
-import { Tabs } from "antd";
+import { useEffect, useState } from "react";
+import { Spin, Tabs } from "antd";
+import { HeartFilled, HeartOutlined } from "@ant-design/icons";
 import {
   AllPeopleType,
   ChildrenType,
-  LikeLineType,
   MenType,
   StartType,
   WomanType,
 } from "@/component/Icons";
+import imgInfo from "@/component/active";
+import { getMusicList } from "@/services/notes";
 import styles from "./index.module.scss";
 
 const { TabPane } = Tabs;
 const Publish = () => {
   const [select, setSelect] = useState("all");
+  const [musicList, setMusicList] = useState<any[]>([]);
   const ContentItem = () => (
     <div className={styles.rowItem}>
       {/* 这里是内容，例如文本、图标等 */}
@@ -25,7 +28,14 @@ const Publish = () => {
           <StartType style={{ color: "#000", fontSize: 20 }} />
         </p>
         <p>
-          <LikeLineType style={{ color: "#000", fontSize: 24 }} />
+          <HeartFilled
+            style={{ fontSize: 20 }}
+            // onClick={() => handleLike(o.musicId, false)}
+          />
+          {/* <HeartOutlined
+            style={{ fontSize: 20 }}
+            // onClick={() => handleLike(o.musicId, true)}
+          /> */}
         </p>
         <p>20</p>
       </div>
@@ -43,9 +53,25 @@ const Publish = () => {
     <ContentRow key={index} />
   ));
 
+  const queryData = async () => {
+    const res = await getMusicList();
+    if (res.code === 200) {
+      setMusicList(res.rows || []);
+    } else {
+      setMusicList([]);
+    }
+  };
+
+  // 加入/移除喜欢
+  const handleLike = (id: any, type: boolean) => {};
+
+  useEffect(() => {
+    queryData();
+  }, []);
+
   return (
     <div className={styles.container}>
-      <Tabs defaultActiveKey="all" onChange={(t) => setSelect(t)}>
+      <Tabs activeKey={select} onChange={(t) => setSelect(t)}>
         <TabPane
           tab={
             <div className={styles.tabIcon}>
@@ -60,7 +86,36 @@ const Publish = () => {
           }
           key="all"
         >
-          <div className={styles.content}>{rows}</div>
+          <div className={styles.content}>
+            {musicList.length > 0 ? (
+              musicList.map((o) => (
+                <div className={styles.rowItem} key={o.musicId}>
+                  {/* 这里是内容，例如文本、图标等 */}
+                  <div className={styles.imgBox}>
+                    <img src={imgInfo.active + o.image} alt="" />
+                  </div>
+                  <div className={styles.itemText}>
+                    <p title={o.username}>{o.username}</p>
+                    <StartType style={{ color: "#000", fontSize: 20 }} />
+                    {o.like === 0 ? (
+                      <HeartFilled
+                        style={{ fontSize: 20 }}
+                        onClick={() => handleLike(o.musicId, false)}
+                      />
+                    ) : (
+                      <HeartOutlined
+                        style={{ fontSize: 20 }}
+                        onClick={() => handleLike(o.musicId, true)}
+                      />
+                    )}
+                    <span>{o.likeNum}</span>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <Spin />
+            )}
+          </div>
         </TabPane>
         <TabPane
           tab={
