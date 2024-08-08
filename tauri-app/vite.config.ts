@@ -10,9 +10,9 @@ export default defineConfig(async () => ({
     strictPort: true,
     proxy: {
       "/api": {
-        // target: "http://192.168.2.19:8080/api",// 公司运行IP
+        target: "http://192.168.2.19:8080/api",// 公司运行IP
         // target: "http://192.168.0.118:8080/api",// 家里运行IP
-        target: "http://192.168.1.6:8080/api",
+        // target: "http://192.168.1.6:8080/api",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
