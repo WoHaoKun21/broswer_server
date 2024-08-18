@@ -1,25 +1,48 @@
-.mainHeader {
+.header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   height: 40px;
-  border-bottom: 1px solid #eee;
-  padding-right: 10px;
-  .titlebarButton {
-    width: 30px;
-    height: 30px;
-    color: #000;
-    margin-left: 15px;
-    text-align: center;
-    line-height: 30px;
-    &:hover {
-      background-color: #eee;
+  padding: 0px 10px;
+  .tags {
+    position: relative;
+    display: flex;
+    height: 100%;
+    .tag {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      font-size: 14px;
+      margin-right: 32px;
+      color: #ccc;
+      border-bottom: 2px solid #1677ff00;
+      cursor: pointer;
+    }
+    .tag:last-of-type {
+      margin-right: 0px;
+    }
+    .tag:hover {
+      color: #000;
+      transition: all 0.2s ease-in-out;
+    }
+    .tagActive {
+      color: #000;
+      border-bottom: 2px solid #000;
     }
   }
-  .titlebarButton:last-child {
-    &:hover {
-      color: white;
-      background-color: rgb(235, 32, 19);
+  .funcStyle {
+    display: flex;
+    align-items: center;
+    .titlebarButton {
+      width: 30px;
+      height: 30px;
+      color: #909090;
+      text-align: center;
+      line-height: 30px;
+      cursor: pointer;
+    }
+    .titlebarButton:hover {
+      color: #000;
     }
   }
 }

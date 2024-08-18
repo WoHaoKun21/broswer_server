@@ -26,13 +26,16 @@ const CommBottom = () => {
       </div>
       {/* 底部工具 */}
       <div className={styles.toolbarButtons}>
-        <button className={styles.toolbarButton} id="slider">
+        <div
+          className={classNames([styles.toolbarButton, styles.silderBox])}
+          id="slider"
+        >
           <MicroPhoneType style={{ fontSize: 24 }} />
           <div className={styles.slider}>
             <Slider vertical defaultValue={30} min={0} max={100} />
           </div>
-        </button>
-        <button className={styles.toolbarButton}>
+        </div>
+        <div className={styles.toolbarButton}>
           <ToneType style={{ fontSize: 24 }} />
           <div className={styles.control}>
             <Form
@@ -59,13 +62,13 @@ const CommBottom = () => {
               <DirecTionType rotate={90} />
             </div>
           </div>
-        </button>
-        <button className={styles.toolbarButton}>
+        </div>
+        <div className={styles.toolbarButton}>
           <EarType style={{ fontSize: 24 }} />
-        </button>
-        <button className={styles.toolbarButton}>
+        </div>
+        <div className={styles.toolbarButton}>
           <RecordType style={{ fontSize: 24 }} />
-        </button>
+        </div>
       </div>
     </div>
   );

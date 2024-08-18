@@ -46,8 +46,18 @@ router.get("/notes/removeLike", (request, response) => {
 
 // 获取notes音乐列表
 router.get("/public/list", (request, response) => {
+  const { sexType } = request.query;
+
+  const data =
+    sexType === "man"
+      ? 0
+      : sexType === "gril"
+      ? 1
+      : sexType === "child"
+      ? 2
+      : null;
   const musicList = getExcelData("database/dataBase.xlsx", 1).filter((o) =>
-    request.query.sexType ? o.sexType === Number(request.query.sexType) : true
+    data === 0 || data ? o.sexType === data : true
   );
   if (musicList) {
     response.send({

@@ -2,13 +2,10 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-}
-.tabBox {
-  padding: 0px 20px 10px 20px;
+  padding: 20px 20px 10px 20px;
+  font-size: 14px;
   // 音频设置
   .setAudioBox {
-    margin: auto;
-    // background-color: #f00;
     .audioItem {
       height: 130px;
       padding: 10px;
@@ -26,10 +23,12 @@
         margin-bottom: 10px;
       }
     }
+    .audioItem:last-child {
+      margin-bottom: 0px;
+    }
   }
   // 快捷按键
   .setQuickBox {
-    margin: auto;
     border-radius: 10px;
     border: 1px solid #ccc9;
     .boxItem {
@@ -40,19 +39,11 @@
       padding: 0px 20px;
       font-weight: bold;
       border-bottom: 1px solid #ccc9;
-    }
-  }
-  :global {
-    // Tabs 组件样式
-    .ant-tabs-tab .ant-tabs-tab-btn {
-      color: #ccc;
-    }
-    // 选择的tabs
-    .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
-      color: #000;
-    }
-    .ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
-      background-color: transparent;
+      :global {
+        .ant-select-focused.ant-select-open .ant-select-selector {
+          border-color: #f000;
+        }
+      }
     }
   }
 }
